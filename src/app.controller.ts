@@ -1,4 +1,4 @@
-import { Controller, Get, Query, Redirect } from '@nestjs/common';
+import { Controller, Get, Query, Redirect, Render } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -9,12 +9,17 @@ export class AppController {
   static scope = 'repo,user';
   static url = `https://github.com/login/oauth/authorize?client_id=${AppController.client_id}&scope=${AppController.scope}`;
 
+  @Get()
+  @Render('index')
+  getRoot() {}
+
   @Get('login')
   @Redirect(AppController.url, 302)
-  getHello() {}
+  getRogin() {}
 
   @Get('callback')
-  loginCallback(@Query('code') code) {
+  @Render('mypage')
+  getloginCallback(@Query('code') code) {
     console.log(code);
     return this.appService.getToken(code);
   }
