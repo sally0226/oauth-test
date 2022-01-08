@@ -16,7 +16,7 @@ https://www.npmtrends.com/ejs-vs-handlebars-vs-pug에서 템플릿 엔진들을 
 
 ejs : 가벼움 
 
-handlebars : nestjs 공식문서에서 메뉴얼 제공
+handlebars : [nestjs 공식문서에서 메뉴얼](https://docs.nestjs.kr/techniques/mvc#template-rendering) 제공
 
 아주 간단한 페이지만 필요했기 때문에, 공식 메뉴얼이 존재하는 handlebars를 선택했습니다.
 
